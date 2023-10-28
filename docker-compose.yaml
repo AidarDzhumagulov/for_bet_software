@@ -1,15 +1,29 @@
 version: '3'
 
 services:
-  app:
+  bet_maker:
     build:
-      context: ..
+      context: ./bet_maker
       dockerfile: Dockerfile
     volumes:
-      - ./app:/app
+      - ./bet_maker/app:/app
     restart: on-failure
     ports:
       - 8000:80
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:qwerty@db:5432/aidar
+
+  line_provider:
+    build:
+      context: ./line_provider
+      dockerfile: Dockerfile
+    volumes:
+      - ./line_provider/app:/app
+    restart: on-failure
+    ports:
+      - 8001:80
     depends_on:
       - db
     environment:
@@ -25,11 +39,6 @@ services:
     ports:
       - "5432:5432"
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
 
 volumes:
   postgresql-user:
