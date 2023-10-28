@@ -3,7 +3,7 @@
 # from database import Base
 # from sqlalchemy import Column, Integer, Enum, ForeignKey, DECIMAL
 # from sqlalchemy.orm import relationship
-#
+
 #
 # class BetState(enum.Enum):
 #     ACTIVE = 'active'
