@@ -12,8 +12,8 @@ log_level = {
 }
 
 
-if not os.path.exists(os.path.dirname("logs/test.logs")):
-    os.makedirs(os.path.dirname("logs/test.logs"))
+if not os.path.exists(os.path.dirname("logs/line_provider.logs")):
+    os.makedirs(os.path.dirname("logs/line_provider.logs"))
 
 logger = logging.getLogger("line_provider")
 formater = logging.Formatter('%(asctime)s - %(name)s:%(lineno)s - %(levelname)s - %(message)s')
