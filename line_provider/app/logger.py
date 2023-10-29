@@ -24,7 +24,7 @@ stream_handler = logging.StreamHandler()
 stream_handler.setFormatter(formater)
 logger.addHandler(stream_handler)
 
-file_handler = handlers.RotatingFileHandler(filename="logs/test.log",
+file_handler = handlers.RotatingFileHandler(filename="logs/line_provider.log",
                                             maxBytes=1024*1024*5)
 file_handler.setFormatter(formater)
 file_handler.setLevel(logging.INFO)
