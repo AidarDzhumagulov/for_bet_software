@@ -1,0 +1,7 @@
+postgresql:
+  drivername: postgresql+asyncpg
+  username: postgres
+  password: qwerty
+  database: postgres
+  host: db
+  port: 5432

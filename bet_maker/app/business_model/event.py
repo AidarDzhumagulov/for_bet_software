@@ -3,27 +3,26 @@ import decimal
 import httpx
 from datetime import datetime
 
+from config import config
+
 
 class EventBusinessModel:
-    """User's Phone CRUD"""
 
-    def __init__(self):
-        self.current_time = datetime.now()
-        self.base_url = 'http://line_provider:80'
-
-    async def get_events(self):
+    @staticmethod
+    async def get_events():
         """
         Получаем все события
 
         :return:
         """
         async with httpx.AsyncClient() as client:
-            response = await client.get(self.base_url+'/event/events')
+            response = await client.get(config["line_provider_url"]+'/event/events')
 
         response_content = response.text.strip()
 
         return response_content
 
+    @staticmethod
     async def create_events(self, coefficient: decimal.Decimal, deadline: datetime):
         """
         Создаем событие
@@ -31,7 +30,7 @@ class EventBusinessModel:
         :return:
         """
         async with httpx.AsyncClient() as client:
-            response = await client.post(self.base_url+'/event/events', params={"coefficient": coefficient, "deadline": deadline})
+            response = await client.post(config["line_provider_url"]+'/event/events', params={"coefficient": coefficient, "deadline": deadline})
 
         response_content = response.text.strip()
 

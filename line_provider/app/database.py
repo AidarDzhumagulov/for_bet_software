@@ -3,19 +3,13 @@ from sqlalchemy.engine.url import make_url
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.ext.declarative import declarative_base
 
-
-POSTGRES_CREDENTIALS = {
-    "username": "postgres",
-    "password": "qwerty",
-    "drivername": "postgresql+asyncpg",
-    "database": "postgres",
-    "host": "db",
-    "port": "5432"
-}
+from config import config
 
 postgresql_url = make_url("postgresql+asyncpg://%(username)s:%(password)s@%(host)s:%(port)s/%(database)s" %
-                          POSTGRES_CREDENTIALS)
+                          config["postgresql"])
+
 engine = create_async_engine(postgresql_url)
+
 maker = sessionmaker(
     autocommit=False,
     autoflush=False,
