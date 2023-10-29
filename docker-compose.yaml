@@ -5,6 +5,8 @@ services:
     build:
       context: ./bet_maker
       dockerfile: Dockerfile
+    networks:
+      - your_network
     volumes:
       - ./bet_maker/app:/app
     restart: on-failure
@@ -19,6 +21,8 @@ services:
     build:
       context: ./line_provider
       dockerfile: Dockerfile
+    networks:
+      - your_network
     volumes:
       - ./line_provider/app:/app
     restart: on-failure
@@ -26,12 +30,15 @@ services:
       - 8001:80
     depends_on:
       - db
+      - bet_maker
     environment:
       - DATABASE_URL=postgresql+asyncpg://postgres:qwerty@db:5432/aidar
 
   db:
     image: postgres
     restart: always
+    networks:
+      - your_network
     environment:
       - POSTGRES_PASSWORD=qwerty
     volumes:
@@ -39,6 +46,8 @@ services:
     ports:
       - "5432:5432"
 
-
 volumes:
   postgresql-user:
+
+networks:
+  your_network:

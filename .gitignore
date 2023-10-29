@@ -1,3 +1,9 @@
 /.idea
 /line_provider/.env
 /bet_maker/.env
+/bet_maker/.idea
+/line_provider/.idea
+/bet_maker/app/business_model/__pycache__/
+bet_maker/app/__pycache__
+bet_maker/app/crud/__pycache__/
+line_provider/app/__pycache__/
