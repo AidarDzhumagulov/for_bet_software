@@ -1,7 +1,0 @@
-2023-10-13 16:58:09,342 - TestProject:43 - INFO - User id = 1 successfully created, username = aidar
-2023-10-13 16:59:01,231 - TestProject:23 - INFO - Phone for user_id = 1 successfully created, phone_id = 1
-2023-10-14 00:03:16,015 - TestProject:43 - INFO - User id = 1 successfully created, username = Aidar
-2023-10-28 01:50:52,867 - TestProject:25 - INFO - Была создана ставка 1 на событие 1
-2023-10-28 01:51:25,667 - TestProject:25 - INFO - Была создана ставка 2 на событие 1
-2023-10-28 01:52:15,863 - TestProject:25 - INFO - Была создана ставка 3 на событие 1
-2023-10-28 01:54:56,245 - TestProject:25 - INFO - Была создана ставка 4 на событие 1
