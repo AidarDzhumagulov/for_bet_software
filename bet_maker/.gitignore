@@ -2,3 +2,4 @@ app/config/__pycache__
 app/endpoints/__pycache__
 app/models/__pycache__
 app/schemas/__pycache__
+bet_maker/app/logs/

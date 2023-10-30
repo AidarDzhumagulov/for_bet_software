@@ -26,7 +26,7 @@ async def create_events(coefficient: decimal.Decimal, deadline: datetime, event:
     Апи для создания события
 
     :param coefficient: коэффициент события
-    :param deadline: дата окончания события
+    :param deadline: дата окончания события. Пример, 2023-11-05 23:59:00
     :param event: Бизнес модель События
     """
     return await event.create_events(coefficient, deadline)
