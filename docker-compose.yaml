@@ -6,7 +6,7 @@ services:
       context: ./bet_maker
       dockerfile: Dockerfile
     networks:
-      - your_network
+      - my_network
     volumes:
       - ./bet_maker/app:/app
     restart: on-failure
@@ -22,7 +22,7 @@ services:
       context: ./line_provider
       dockerfile: Dockerfile
     networks:
-      - your_network
+      - my_network
     volumes:
       - ./line_provider/app:/app
     restart: on-failure
@@ -38,7 +38,7 @@ services:
     image: postgres
     restart: always
     networks:
-      - your_network
+      - my_network
     environment:
       - POSTGRES_PASSWORD=qwerty
     volumes:
@@ -50,4 +50,4 @@ volumes:
   postgresql-user:
 
 networks:
-  your_network:
+  my_network:

@@ -9,7 +9,6 @@ from models.event_models import Event
 
 
 class EventBusinessModel:
-    """User's Phone CRUD"""
 
     def __init__(self):
         self.current_time = datetime.now().date()
@@ -25,8 +24,17 @@ class EventBusinessModel:
         result = await session.execute(events)
         return result.scalars().all()
 
-    # To create user's phone into DB
-    async def create_event(self, session: AsyncSession, coefficient: decimal.Decimal, deadline: datetime):
+    @staticmethod
+    async def create_event(session: AsyncSession, coefficient: decimal.Decimal, deadline: datetime):
+        """
+        Создаем событие
+
+        :param session:
+        :param coefficient:
+        :param deadline:
+        :return:
+        """
+
         event = Event(coefficient=coefficient, deadline=deadline)
         session.add(event)
         await session.commit()

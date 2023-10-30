@@ -7,6 +7,9 @@ from models.event_models import Event
 
 
 class BetState(enum.Enum):
+    """
+    Статусы ставок, в которых они могут быть
+    """
     ACTIVE = 'active'
     WIN = 'win'
     LOSE = 'lose'

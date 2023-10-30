@@ -1,10 +1,12 @@
 import decimal
+from typing import Sequence
 
-from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from models.bet_models import Bet
-from schemas.bet_schema import BetGet, BetCreate
+from sqlalchemy.ext.asyncio import AsyncSession
+
 from logger import logger
+from models.bet_models import Bet
+from schemas.bet_schema import BetCreate
 
 
 class BetBusinessModel:
@@ -14,10 +16,10 @@ class BetBusinessModel:
         """
         Создаем сущность ставки
 
-        :param session:
-        :param event_id:
-        :param bet_sum:
-        :return:
+        :param session: сессия для бд
+        :param event_id: идентификатор события
+        :param bet_sum: сумма ставки
+        :return: BetCreate
         """
         bet = Bet(event_id=event_id, bet_sum=bet_sum)
         session.add(bet)
@@ -26,7 +28,7 @@ class BetBusinessModel:
         return bet
 
     @staticmethod
-    async def get(session: AsyncSession):
+    async def get(session: AsyncSession) -> Sequence[Bet]:
         """
         Получаем все сущности ставки
 
