@@ -14,5 +14,5 @@ async def get_events(event: EventBusinessModel = Depends()):
 
 
 @router.post("/events", tags=['Event'])
-async def get_events(coefficient: decimal.Decimal, deadline: datetime, event: EventBusinessModel = Depends()):
+async def create_events(coefficient: decimal.Decimal, deadline: datetime, event: EventBusinessModel = Depends()):
     return await event.create_events(coefficient, deadline)

@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends
 
 from business_model.bet import BetBusinessModel
 from database import DbSession as async_session
-from schemas.bet_schema import BetGet, BetCreate
+
 
 router = APIRouter()
 

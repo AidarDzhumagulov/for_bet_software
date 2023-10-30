@@ -3,6 +3,7 @@ import enum
 from database import Base
 from sqlalchemy import Column, Integer, Enum, ForeignKey, DECIMAL
 from sqlalchemy.orm import relationship
+from models.event_models import Event
 
 
 class BetState(enum.Enum):

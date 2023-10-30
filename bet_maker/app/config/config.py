@@ -31,6 +31,5 @@ try:
     extend_config(COMMON_CONFIGS_DIR)
 
 
-
 except FileNotFoundError:
     sys.exit(os.EX_CONFIG)

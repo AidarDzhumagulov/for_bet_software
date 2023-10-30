@@ -15,7 +15,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql+asyncpg://postgres:qwerty@db:5432/aidar
+      - DATABASE_URL=postgresql+asyncpg://postgres:qwerty@localhsot:5432/aidar
 
   line_provider:
     build:

@@ -23,7 +23,7 @@ class EventBusinessModel:
         return response_content
 
     @staticmethod
-    async def create_events(self, coefficient: decimal.Decimal, deadline: datetime):
+    async def create_events(coefficient: decimal.Decimal, deadline: datetime):
         """
         Создаем событие
 
